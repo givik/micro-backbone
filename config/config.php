@@ -1,23 +1,23 @@
 <?php
-	
-	// ERROR reporting
-	Flight::set('flight.log_errors', true);
 
-	// define default timezone
-	date_default_timezone_set('Asia/Tbilisi');
+// ERROR reporting
+Flight::set('flight.log_errors', true);
 
-	// connectiong to database
-	$db = new Sparrow();
-	$db->setDb('mysql://madera:password@localhost/madera');
+// define default timezone
+date_default_timezone_set('Asia/Tbilisi');
 
-	// Set base url for application
-    Flight::set('flight.base_url', '/madera');
+// connectiong to database
+$db = new Sparrow();
+$db->setDb('mysql://madera:password@localhost/madera');
 
-	Flight::map('error', function(Exception $ex){
-	    // Handle error
-	    echo $ex->getTraceAsString();
-	});
+// Set base url for application
+Flight::set('flight.base_url', '/madera');
 
-	Flight::map('notFound', function(){
-	    echo "404. Not found.";
-	});
+Flight::map('error', function(Exception $ex){
+    // Handle error
+    echo $ex->getTraceAsString();
+});
+
+Flight::map('notFound', function(){
+    echo "404. Not found.";
+});
