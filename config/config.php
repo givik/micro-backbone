@@ -11,7 +11,7 @@ $db = new Sparrow();
 $db->setDb('mysql://user:password@localhost/database');
 
 // Set base url for application
-Flight::set('flight.base_url', '/madera');
+Flight::set('flight.base_url', '/');
 
 Flight::map('error', function(Exception $ex){
     // Handle error
