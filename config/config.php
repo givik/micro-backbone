@@ -8,7 +8,7 @@ date_default_timezone_set('Asia/Tbilisi');
 
 // connectiong to database
 $db = new Sparrow();
-$db->setDb('mysql://madera:password@localhost/madera');
+$db->setDb('mysql://user:password@localhost/database');
 
 // Set base url for application
 Flight::set('flight.base_url', '/madera');
